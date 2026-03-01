@@ -1,6 +1,6 @@
 const { sendMail } = require('../config/email');
 
-const baseUrl = process.env.FRONTEND_URL || 'http://localhost:4200';
+const baseUrl = process.env.FRONTEND_URL || 'https://arkakstudio.vercel.app/login';
 
 const emailTemplates = {
   verification: (user, token) => ({

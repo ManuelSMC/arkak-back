@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3000;
 app.use(helmet({ crossOriginResourcePolicy: false }));
 
 const allowedOrigins = process.env.FRONTEND_URL
-  ? [process.env.FRONTEND_URL, 'http://localhost:4200']
+  ? [process.env.FRONTEND_URL, 'https://arkakstudio.vercel.app/login']
   : true;
 
 app.use(cors({
