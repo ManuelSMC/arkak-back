@@ -11,6 +11,13 @@ node_modules/
 .idea/
 *.swp
 
+migrate.js
+migration_v2.sql
+schema.sql
+seed.js
+database.js
+index.js
+
 # OS
 .DS_Store
 Thumbs.db
