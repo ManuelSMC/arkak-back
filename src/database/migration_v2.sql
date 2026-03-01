@@ -1,5 +1,5 @@
 -- Migration V2: Seller Requests + Must Change Password
-USE arkak_db;
+-- Note: DATABASE is already selected via DB_NAME env var in the connection pool.
 
 -- Add must_change_password column to users
 ALTER TABLE users ADD COLUMN must_change_password TINYINT(1) NOT NULL DEFAULT 0 AFTER reset_password_expires;

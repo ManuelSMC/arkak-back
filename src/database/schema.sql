@@ -2,11 +2,7 @@
 -- ArkaK - Real Estate Platform Database Schema
 -- MySQL 8.x
 -- ============================================
-
-CREATE DATABASE IF NOT EXISTS arkak_db
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE arkak_db;
+-- Note: DATABASE is already selected via DB_NAME env var in the connection pool.
 
 -- ============================================
 -- USERS
