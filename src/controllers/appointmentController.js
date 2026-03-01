@@ -211,9 +211,9 @@ exports.cancel = async (req, res) => {
     const apptData = { appointment_date: appt.appointment_date, start_time: appt.start_time };
 
     if (isClient) {
-      await sendMail(emailTemplates.appointmentCancelled(sellers[0], property, apptData));
+      try { await sendMail(emailTemplates.appointmentCancelled(sellers[0], property, apptData)); } catch (e) { console.warn('Email failed:', e.message); }
     } else {
-      await sendMail(emailTemplates.appointmentCancelled(clients[0], property, apptData));
+      try { await sendMail(emailTemplates.appointmentCancelled(clients[0], property, apptData)); } catch (e) { console.warn('Email failed:', e.message); }
     }
 
     res.json({ message: 'Cita cancelada exitosamente' });

@@ -36,9 +36,13 @@ exports.register = async (req, res) => {
 
     const user = { id: result.insertId, email, first_name, last_name, role: userRole };
 
-    // Send verification email
-    const emailData = emailTemplates.verification(user, verificationToken);
-    await sendMail(emailData);
+    // Send verification email (non-blocking, don't fail registration if email fails)
+    try {
+      const emailData = emailTemplates.verification(user, verificationToken);
+      await sendMail(emailData);
+    } catch (emailErr) {
+      console.warn('Email send failed (registration still succeeded):', emailErr.message);
+    }
 
     const token = generateToken(user);
 
@@ -146,7 +150,11 @@ exports.forgotPassword = async (req, res) => {
     );
 
     const emailData = emailTemplates.resetPassword(user, resetToken);
-    await sendMail(emailData);
+    try {
+      await sendMail(emailData);
+    } catch (emailErr) {
+      console.warn('Reset password email failed:', emailErr.message);
+    }
 
     res.json({ message: 'Si el correo existe, recibirás instrucciones para restablecer tu contraseña.' });
   } catch (err) {
