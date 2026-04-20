@@ -16,7 +16,7 @@ const sendMail = async ({ to, subject, html }) => {
     return;
   }
   return transporter.sendMail({
-    from: process.env.EMAIL_FROM || 'ArkaK <noreply@arkak.com>',
+    from: process.env.EMAIL_FROM || 'Callix <noreply@arkak.com>',
     to,
     subject,
     html,

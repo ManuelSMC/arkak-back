@@ -61,7 +61,7 @@ app.use('/api', adminRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString(), name: 'ArkaK API' });
+  res.json({ status: 'ok', timestamp: new Date().toISOString(), name: 'Callix API' });
 });
 
 // 404 handler
@@ -82,7 +82,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🏠 ArkaK API running on http://localhost:${PORT}`);
+  console.log(`🏠 Callix API running on http://localhost:${PORT}`);
   console.log(`📚 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 

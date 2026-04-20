@@ -1,7 +1,7 @@
 {
-  "name": "arkak-backend",
+  "name": "callix-backend",
   "version": "1.0.0",
-  "description": "ArkaK - Real Estate Platform API",
+  "description": "Callix - Real Estate Platform API",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",

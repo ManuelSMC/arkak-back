@@ -5,11 +5,11 @@ const baseUrl = process.env.FRONTEND_URL || 'https://arkakstudio.vercel.app/logi
 const emailTemplates = {
   verification: (user, token) => ({
     to: user.email,
-    subject: 'ArkaK - Verifica tu cuenta',
+    subject: 'Callix - Verifica tu cuenta',
     html: `
       <div style="font-family:'Inter',sans-serif;max-width:600px;margin:0 auto;background:#f0f4f0;padding:40px 20px;">
         <div style="background:white;border-radius:12px;padding:40px;box-shadow:0 2px 10px rgba(0,0,0,0.05);">
-          <h1 style="color:#2d6a4f;margin:0 0 24px;">¡Bienvenido a ArkaK!</h1>
+          <h1 style="color:#2d6a4f;margin:0 0 24px;">¡Bienvenido a Callix!</h1>
           <p style="color:#333;font-size:16px;line-height:1.6;">Hola <strong>${user.first_name}</strong>,</p>
           <p style="color:#555;font-size:15px;line-height:1.6;">Gracias por registrarte. Verifica tu cuenta haciendo clic en el siguiente botón:</p>
           <div style="text-align:center;margin:32px 0;">
@@ -22,7 +22,7 @@ const emailTemplates = {
 
   resetPassword: (user, token) => ({
     to: user.email,
-    subject: 'ArkaK - Restablecer contraseña',
+    subject: 'Callix - Restablecer contraseña',
     html: `
       <div style="font-family:'Inter',sans-serif;max-width:600px;margin:0 auto;background:#f0f4f0;padding:40px 20px;">
         <div style="background:white;border-radius:12px;padding:40px;">
@@ -39,7 +39,7 @@ const emailTemplates = {
 
   appointmentConfirmClient: (client, seller, property, appointment) => ({
     to: client.email,
-    subject: 'ArkaK - Cita confirmada',
+    subject: 'Callix - Cita confirmada',
     html: `
       <div style="font-family:'Inter',sans-serif;max-width:600px;margin:0 auto;background:#f0f4f0;padding:40px 20px;">
         <div style="background:white;border-radius:12px;padding:40px;">
@@ -59,7 +59,7 @@ const emailTemplates = {
 
   appointmentConfirmSeller: (client, seller, property, appointment) => ({
     to: seller.email,
-    subject: 'ArkaK - Nueva cita agendada',
+    subject: 'Callix - Nueva cita agendada',
     html: `
       <div style="font-family:'Inter',sans-serif;max-width:600px;margin:0 auto;background:#f0f4f0;padding:40px 20px;">
         <div style="background:white;border-radius:12px;padding:40px;">
@@ -78,7 +78,7 @@ const emailTemplates = {
 
   appointmentCancelled: (user, property, appointment, reason) => ({
     to: user.email,
-    subject: 'ArkaK - Cita cancelada',
+    subject: 'Callix - Cita cancelada',
     html: `
       <div style="font-family:'Inter',sans-serif;max-width:600px;margin:0 auto;background:#f0f4f0;padding:40px 20px;">
         <div style="background:white;border-radius:12px;padding:40px;">
